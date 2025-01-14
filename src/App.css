@@ -55,19 +55,19 @@ body {
 
 .itemBox {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-self: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
   height: auto;
   margin: 50px 0 0 0;
   padding: 16px 0;
   background-color: rgba(217, 217, 217, 0.5);
-  width: 80%;
+  max-width: 80%;
   border-radius: 25px;
 }
 
 .items {
+  display: inline-block;
   align-self: center;
   color: #465C47;
   font-size: 25px;
@@ -75,22 +75,4 @@ body {
   padding: 10px;
   margin: 25px;
   border-radius: 10px;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.blinking {
-  animation: blink 1.5s infinite;
 }
