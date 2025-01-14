@@ -1,3 +1,7 @@
+* {
+  font-family: "DM Serif Text", serif;
+}
+
 html {
   height: 100%;
   margin: 0;
@@ -5,4 +9,88 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemBoxBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #fffff0;
+  font-size: 70px;
+  display: inline-block;
+  width: auto;
+  margin: 91px 0 0 141px;
+}
+
+#text-box {
+  background-color: transparent;
+  padding: 10px 200px 5px 5px;
+  margin: 0 0 0 10px;
+  border: none;
+  border-bottom: 2px solid #fffff0;
+  color: #fffff0;
+  font-size: 28px;
+}
+
+#text-box::placeholder {
+  color: #fffff0;
+  opacity: 0.50;
+}
+
+#text-box:focus {
+  box-shadow: none;
+  outline: none;
+  caret-color: rgba(255, 255, 240, 0.25);
+}
+
+.itemBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  height: auto;
+  margin: 50px 0 0 0;
+  padding: 16px 0;
+  background-color: rgba(217, 217, 217, 0.5);
+  width: 80%;
+  border-radius: 25px;
+}
+
+.items {
+  align-self: center;
+  color: #465C47;
+  font-size: 25px;
+  background-color: #fffff0;
+  padding: 10px;
+  margin: 25px;
+  border-radius: 10px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  animation: blink 1.5s infinite;
 }
