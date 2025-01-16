@@ -60,7 +60,6 @@ body {
   align-items: center;
   height: auto;
   margin: 50px 0 0 0;
-  padding: 10px;
   background-color: rgba(217, 217, 217, 0.5);
   max-width: 80%;
   border-radius: 25px;
@@ -75,4 +74,63 @@ body {
   padding: 10px;
   margin: 15px;
   border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.itemContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.itemButtonOne {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 20%;
+  transform: translateY(-50%);
+  gap: 10px;
+}
+
+.itemButtonTwo {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  transform: translateY(-50%);
+  gap: 10px;
+}
+
+.itemButtonOne button {
+  padding: 5px 11.25px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(16, 100, 16, 0.75);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.itemButtonTwo button {
+  padding: 5px 11.25px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(140, 19, 19, 0.75);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.itemButtonOne button:hover,
+.itemButtonTwo button:hover {
+  transform: scale(1.1);
+}
+
+.itemContainer:hover .itemButtonOne,
+.itemContainer:hover .itemButtonTwo {
+  display: flex;
 }
