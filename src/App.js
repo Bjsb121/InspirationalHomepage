@@ -70,6 +70,9 @@ function TextBox() {
           ))}
         </div>
       </div>
+      <button className='arrowLeft'>&#60;</button>
+      <p className='quote'>"The ability to speak does not make you intelligent" - Qui-Gon Jinn</p>
+      <button className='arrowRight'>&#62;</button>
     </div>
   );
 }

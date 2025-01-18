@@ -134,3 +134,43 @@ body {
 .itemContainer:hover .itemButtonTwo {
   display: flex;
 }
+
+.arrowLeft {
+  position: absolute;
+  top: 50%;
+  left: 2.5%;
+  color: #fffff0;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+
+.quote {
+  color: #fffff0;
+  font-size: 20px;
+  margin: 50px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  right: 2.5%;
+  color: #fffff0;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
