@@ -88,80 +88,80 @@ function TextBox() {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${backgrounds[backgroundIndex]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh',
-        width: '100%',
-        transition: 'background-image 0.5s ease',
-      }}
-    >
-      <label htmlFor="text-box" className="title">
-        Things to do today:{' '}
-      </label>
-      <input
-        id="text-box"
-        type="text"
-        value={value}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        placeholder="What are we doing today?"
+    <div className="backgroundWrapper">
+      <div
+        className={`backgroundImage ${backgroundIndex === 0 ? 'active' : ''}`}
+        style={{ backgroundImage: `url(${backgrounds[0]})` }}
       />
-      <div className="itemBoxBox">
-        <div className="itemBox">
-          {items.map((item, index) => (
-            <div key={index} className="itemContainer">
-              <p className="items" style={{ backgroundColor: item.color }}>
-                {item.text}
-              </p>
-              <div className="itemButtonOne">
-                <button onClick={() => handleColorChange(index)}>
-                  {item.buttonLabel}
-                </button>
+      <div
+        className={`backgroundImage ${backgroundIndex === 1 ? 'active' : ''}`}
+        style={{ backgroundImage: `url(${backgrounds[1]})` }}
+      />
+      <div className="content">
+        <label htmlFor="text-box" className="title">
+          Things to do today:{' '}
+        </label>
+        <input
+          id="text-box"
+          type="text"
+          value={value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          placeholder="What are we doing today?"
+        />
+        <div className="itemBoxBox">
+          <div className="itemBox">
+            {items.map((item, index) => (
+              <div key={index} className="itemContainer">
+                <p className="items" style={{ backgroundColor: item.color }}>
+                  {item.text}
+                </p>
+                <div className="itemButtonOne">
+                  <button onClick={() => handleColorChange(index)}>
+                    {item.buttonLabel}
+                  </button>
+                </div>
+                <div className="itemButtonTwo">
+                  <button onClick={() => handleRemove(index)}>✗</button>
+                </div>
               </div>
-              <div className="itemButtonTwo">
-                <button onClick={() => handleRemove(index)}>✗</button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="weatherPanel">
-        {weather ? (
-          <>
-            <h3>Weather in {weather.location.name}</h3>
-            <p>
-              <strong>Temperature:</strong> {weather.current.temp_c}°C
-            </p>
-            <p>
-              <strong>Condition:</strong> {weather.current.condition.text}
-            </p>
-            <img
-              src={`https:${weather.current.condition.icon}`}
-              alt={weather.current.condition.text}
-            />
-            <p>
-              <strong>Feels Like:</strong> {weather.current.feelslike_c}°C
-            </p>
-          </>
-        ) : (
-          <p>Loading weather data...</p>
-        )}
-      </div>
+        <div className="weatherPanel">
+          {weather ? (
+            <>
+              <h3>Weather in {weather.location.name}</h3>
+              <p>
+                <strong>Temperature:</strong> {weather.current.temp_c}°C
+              </p>
+              <p>
+                <strong>Condition:</strong> {weather.current.condition.text}
+              </p>
+              <img
+                src={`https:${weather.current.condition.icon}`}
+                alt={weather.current.condition.text}
+              />
+              <p>
+                <strong>Feels Like:</strong> {weather.current.feelslike_c}°C
+              </p>
+            </>
+          ) : (
+            <p>Loading weather data...</p>
+          )}
+        </div>
 
-      <button className="arrowLeft" onClick={handleArrowLeft}>
-        &#60;
-      </button>
-      <p className="quote">
-        "The ability to speak does not make you intelligent" - Qui-Gon Jinn
-      </p>
-      <button className="arrowRight" onClick={handleArrowRight}>
-        &#62;
-      </button>
+        <button className="arrowLeft" onClick={handleArrowLeft}>
+          &#60;
+        </button>
+        <p className="quote">
+          "The ability to speak does not make you intelligent" - Qui-Gon Jinn
+        </p>
+        <button className="arrowRight" onClick={handleArrowRight}>
+          &#62;
+        </button>
+      </div>
     </div>
   );
 }

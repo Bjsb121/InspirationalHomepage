@@ -13,6 +13,35 @@ body {
   flex-direction: column;
 }
 
+.backgroundWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.backgroundImage.active {
+  opacity: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 .itemBoxBox {
   display: flex;
   flex-direction: column;
@@ -98,17 +127,7 @@ body {
   gap: 10px;
 }
 
-.itemButtonOne button {
-  padding: 5px 11.25px;
-  font-size: 16px;
-  text-align: center;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: rgba(16, 100, 16, 0.75);
-  transition: background-color 0.3s, transform 0.2s;
-}
-
+.itemButtonOne button,
 .itemButtonTwo button {
   padding: 5px 11.25px;
   font-size: 16px;
@@ -116,8 +135,15 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: rgba(140, 19, 19, 0.75);
   transition: background-color 0.3s, transform 0.2s;
+}
+
+.itemButtonOne button {
+  background-color: rgba(16, 100, 16, 0.75);
+}
+
+.itemButtonTwo button {
+  background-color: rgba(140, 19, 19, 0.75);
 }
 
 .itemButtonOne button:hover,
